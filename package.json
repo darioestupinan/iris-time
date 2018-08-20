@@ -1,0 +1,22 @@
+{
+  "name": "iris-time",
+  "version": "1.0.0",
+  "description": "iris time microservice",
+  "main": "server/service.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darioestupinan/iris-time.git"
+  },
+  "author": "dar1o",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darioestupinan/iris-time/issues"
+  },
+  "homepage": "https://github.com/darioestupinan/iris-time#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
