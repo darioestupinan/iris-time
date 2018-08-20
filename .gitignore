@@ -59,3 +59,14 @@ typings/
 
 # next.js build output
 .next
+/config.json
+/config.json
+/config.json
+/package-lock.json
+/.idea/dictionaries/dario.xml
+/.idea/iris-time.iml
+/.idea/jsLibraryMappings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
