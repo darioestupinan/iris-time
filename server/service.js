@@ -7,9 +7,9 @@ const config = require('../config');
 const moment = require('moment');
 
 function getLocation(req, res) {
-    const comMapsApiGeocodeJson = 'https://maps.googleapis.com/maps/api/geocode/json';
+
      return request
-        .get(comMapsApiGeocodeJson)
+        .get(config.endpoints.geocodeApi)
         .query({ address: req.params.location, key: config.geocodingKey})
         .end((err, response) => {
             if (err) {
@@ -23,7 +23,7 @@ function getLocation(req, res) {
 
 function getTime(location, res) {
     const timestamp = +moment().format('X');
-    const url = 'https://maps.googleapis.com/maps/api/timezone/json';
+    const url = config.endpoints.timezoneApi;
     const latlng = `${location.value.lat},${location.value.lng}`;
 
     request.get(url)
@@ -42,7 +42,7 @@ function getTime(location, res) {
             const timeString = moment
                 .unix(timestamp + result.dstOffset + result.rawOffset)
                 .utc()
-                .format('dddd, MMMM Do YYYY, h:mm:ss a');
+                .format(config.dateFormat);
             return {value: res.json({result: timeString}) };
         });
 }
